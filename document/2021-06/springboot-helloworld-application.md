@@ -1,4 +1,4 @@
-### HelloWorld 예제 프로젝트 작성  
+# HelloWorld 예제 프로젝트 작성  
 
 ## 프로젝트 생성   
 회사에서는 이클립스를 사용하지만 저는 개인적으로 인텔리제이를 선호합니다.  
@@ -33,6 +33,9 @@ parent tag는 이름에서 유추할수 있듯이 종속성을 상속하겠다�
 
 프로젝트에 있는 pom.xml는 아래와 같은 코드를 추가하였습니다. (parent, dependencies)  
 parent에 Springboot version을 명시하였으므로 이 프로젝트는 해당 버전의 Springboot에 종속됩니다.  
+다른 버전의 스프링 버전을 사용하고 싶다면 parent TAG안에 있는 spring-boot-starter-parent의 버전을 변경하시면 됩니다.  
+이제 이 프로젝트는 parent에 기술한 Springboot 버전에 종속됩니다.  
+dependency에 종속성 모듈을 불러올 때 버전을 따로 설정하지 않아도 위에 정의한 Springboot 버전에 호환되는 버전을 사용하게 됩니다.  
 그리고 spring-boot-starter-web 패키지를 종속성에 추가하였으므로 Springboot는 내장 Tomcat 서버를 사용해 웹 서버와 스프링을 함께 실행시킵니다.  
 ```xml
 <project>
