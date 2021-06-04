@@ -16,9 +16,26 @@ import java.time.LocalDateTime;
     )
 })
 @Entity
+/* SEQUENCE 전략 사용시 필요함
+@SequenceGenerator(
+        name = "MEMBER_SEQ_GENERATOR",
+        sequenceName = "MEMBER_SEQ",
+        initialValue = 1,       // 초기값
+        allocationSize = 1      // 증가량
+)
+*/
+/* TABLE 전략 사용시 필요함
+@TableGenerator(
+        name = "MEMBER_SEQ_GENERATOR",
+        table = "MEMBERS_SEQUENCE",
+        pkColumnValue = "MEMBER_SEQ", allocationSize = 1
+)
+*/
 public class Member {
     @Id
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEMBER_SEQ_GENERATOR")
+    //@GeneratedValue(strategy = GenerationType.TABLE, generator = "MEMBER_SEQ_GENERATOR")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
