@@ -10,7 +10,7 @@ JPA도 크게 엔티티와 테이블을 매핑하는 설계부분과 엔티티�
 
 ---
 
-## EntityManagerFactory, EntityManagerManager  
+## EntityManagerFactory, EntityManager  
 
 JPA를 통해 데이터를 관리하려면 엔티티 매니저를 사용해야하는데, 이 엔티티 매니저는 엔티티 매니저 팩토리를 통해 생성할 수 있습니다.  
 엔티티 매니저 팩토리는 하이버네이트를 직접 사용할 경우 설정 파일의 persistence-unit의 이름을 가져와서 생성할 수 있고, SpringBoot를 사용하면 자동으로 생성합니다.  
@@ -42,6 +42,10 @@ class EntityManagerExample {
     }
 }
 ```  
+
+Spring-Boot-Data를 사용하여 EntityManagerFactory를 자동으로 생성할 경우 기본값으로 'default' 란 이름으로 생성됩니다.  
+아래와 같이 SpringBoot가 로딩되면 EntityManagerFactory의 이름이 'default'로 초기화 되는 것을 알 수 있습니다.  
+![Alt](/images/2021-06-jpa/jpa-entitymanagerfactory-initialized-default.png)  
 
 ---
 
