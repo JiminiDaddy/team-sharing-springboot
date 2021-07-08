@@ -11,6 +11,7 @@
     <modules>
         <module>springboot-202106</module>
         <module>jpa-202106</module>
+        <module>part3-jpa-association</module>
     </modules>
 
     <parent>
