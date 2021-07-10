@@ -30,4 +30,12 @@ public class SoccerTeam {
 	public String getName() {
 		return name;
 	}
+
+	public List<SoccerMember> getMembers() {
+		return members;
+	}
+
+	public void addMember(SoccerMember member) {
+		members.add(member)	;
+	}
 }

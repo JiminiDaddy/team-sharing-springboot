@@ -20,6 +20,7 @@ public class SoccerMember {
 	public SoccerMember(String name, SoccerTeam team) {
 		this.name = name;
 		this.team = team;
+		this.team.addMember(this);
 	}
 
 	public Long getId() {
@@ -32,5 +33,13 @@ public class SoccerMember {
 
 	public SoccerTeam getTeam() {
 		return team;
+	}
+
+	public void changeTeam(SoccerTeam team) {
+		if (this.team != null) {
+			this.team.getMembers().remove(this);
+		}
+		this.team = team;
+		this.team.addMember(this);
 	}
 }
